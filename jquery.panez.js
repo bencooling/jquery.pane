@@ -1,6 +1,17 @@
 'use strict';
 
-define(['jquery'], function($){
+// support stand alone jquery plugin, requirejs or npm module 
+(function(factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof exports !== 'undefined') {
+    module.exports = factory(require('jquery'));
+  } else {
+    factory(jQuery);
+  }
+
+// jQuery plugin 
+}(function(jQuery) {
 
   $.fn.panez = function(){
 
@@ -27,4 +38,4 @@ define(['jquery'], function($){
     return this;
   };
 
-});
+}));
