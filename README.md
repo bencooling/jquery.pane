@@ -34,6 +34,10 @@ $('[data-panez]').panez();
 <div id="id-for-pane" class="panez-group"></div>
 <div data-panez="id-for-pane" data-panez-group="panez-group"></div>
 
+## Installation
+
+    bower install git+ssh://git@github.com:bencooling/jquery.panez.git
+
 ## FAQ
 
 1. Why must I have attributes for each selector?
