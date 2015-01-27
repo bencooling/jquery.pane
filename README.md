@@ -36,7 +36,7 @@ $('[data-panez]').panez();
 
 ## Installation
 
-    bower install git+ssh://git@github.com:bencooling/jquery.panez.git
+    bower install bencooling/jquery.panez
 
 ## FAQ
 
