@@ -1,7 +1,4 @@
-'use strict';
-
-// support stand alone jquery plugin, requirejs or npm module 
-(function(factory) {
+(function (factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
   } else if (typeof exports !== 'undefined') {
@@ -10,17 +7,16 @@
     factory(jQuery);
   }
 
-// jQuery plugin 
-}(function(jQuery) {
+}(function (jQuery){
+  $.fn.pane = function (){
 
-  $.fn.panez = function(){
+    var changePane = function (){
 
-    function changePane(){
-      var $this  = $(this)
-        , pane   = $this.data('panez')
-        , panes  = $this.data('panez-group')
-        , $tabs  = $('[data-panez-group="'+panes+'"]')
-        , $panes = $('.'+panes)
+      var $this = $(this)
+        , pane = $this.data('pane')
+        , panes = $this.data('pane-group')
+        , $tabs = $('[data-pane-group="' + panes + '"]')
+        , $panes = $('.' + panes)
         ;
 
       $tabs
@@ -30,9 +26,9 @@
 
       $panes
         .removeClass('active')
-        .filter('#'+pane)
+        .filter('.' + pane)
         .addClass('active');
-    }
+    };
     $(this).bind('click', changePane);
 
     return this;
